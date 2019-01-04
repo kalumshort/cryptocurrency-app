@@ -1,6 +1,6 @@
 function reducer ( currentState, action) {
     switch(action.type) {
-        case 'FETCH_COIN_FINISH': {
+        case 'FETCH_COINS_FINISH': {
             return {
                 ...currentState,
                 coins: action.payload

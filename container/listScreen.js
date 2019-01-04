@@ -10,9 +10,8 @@ class ListScreen extends Component {
     static navigationOptions = {
         title: 'Coins',
         headerStyle:{
-            backgroundColor: 'blue'
-        },
-        headerTintColor: 'blue'
+            backgroundColor: 'lightblue'
+        }
     }
 
     componentDidMount() {
@@ -20,7 +19,9 @@ class ListScreen extends Component {
     }
     render() {
         return(
-            <List/>
+            <List coins={this.props.coins}
+                
+            />
         )
     }
 }

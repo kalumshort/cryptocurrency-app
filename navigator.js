@@ -13,7 +13,7 @@ const RootNavigator = createStackNavigator({
         headerStyle: {
             backgroundColor: 'blue'
         },
-        headerTintColor: 'green'
+        headerTintColor: 'black'
     } 
 
 });

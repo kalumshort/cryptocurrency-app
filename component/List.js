@@ -4,11 +4,15 @@ import {View, Text, TouchableHighlight, FlatList } from 'react-native';
 class List extends Component {
     constructor(props){
         super(props);
+        this.renderItem = this.renderItem.bind(this);
 
     }
 
     static navigationOptions = {
         title: 'List',
+        headerStyle: {
+            backgroundColour: 'black'
+        },
 
     }
 
@@ -17,7 +21,7 @@ class List extends Component {
         return item.id;
     }
 
-    renderSeperator(item) {
+    renderSeperator() {
         const style = {height: 1, backgroundColour:'black'};
         return <View style={style} />
     }
@@ -28,7 +32,8 @@ class List extends Component {
         }
         return (
             <View>
-                <TouchableHighlight>
+                <TouchableHighlight
+                 onPress={handlePress}>
                     <Text>{item.name}</Text>
                 </TouchableHighlight>
             </View>
