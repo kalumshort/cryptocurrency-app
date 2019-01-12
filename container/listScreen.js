@@ -6,6 +6,8 @@ import List from '../component/List';
 class ListScreen extends Component {
     constructor(props){
         super(props);
+        console.log(this.props.coins)
+
     }
     static navigationOptions = {
         title: 'Coins',
@@ -16,6 +18,7 @@ class ListScreen extends Component {
 
     componentDidMount() {
         this.props.getCoins();
+
     }
     render() {
         return(
@@ -28,7 +31,8 @@ class ListScreen extends Component {
 
 const mapStateToProps = ( state ) => {
     return {
-        coins: state.coins
+        coins: state.coins,
+
     }
 }
 
@@ -36,6 +40,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         getCoins: () => {
             dispatch(fetchCoins());
+
         }
     }
 }

@@ -18,7 +18,7 @@ class List extends Component {
 
 
     keyExtractor(item) {
-        return item.id;
+        return item.id;  
     }
 
     renderSeperator() {
