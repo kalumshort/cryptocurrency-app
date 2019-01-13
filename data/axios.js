@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default axios.create({
-    baseURL: 'https://min-api.cryptocompare.com',
+    baseURL: 'https://api.coinpaprika.com/v1/',
     header: {
         'Accept': 'application/json',
 

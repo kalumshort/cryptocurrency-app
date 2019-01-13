@@ -35,8 +35,9 @@ class List extends Component {
                 <TouchableHighlight
                  onPress={handlePress}>
                     <>
-                        <Text>{item.CoinInfo.FullName}</Text>
-                        <Text>{item.DISPLAY.USD.PRICE}</Text>
+                        <Text>{item}</Text>
+                        <Text></Text>
+                        <Text></Text>
                     </>
                 </TouchableHighlight>
             </View>
@@ -46,7 +47,7 @@ class List extends Component {
     render() {
         return (
             <FlatList
-                data={this.props.coins}
+                // data={this.props.coins}
                 keyExtractor={this.keyExtractor}
                 ItemSeparatorComponent={this.renderSeperator}
                 renderItem={this.renderItem}
