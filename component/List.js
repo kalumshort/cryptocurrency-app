@@ -34,7 +34,7 @@ class List extends Component {
             <View>
                 <TouchableHighlight
                  onPress={handlePress}>
-                    <Text>{item}</Text>
+                    <Text>{item.CoinInfo.FullName}</Text>
                 </TouchableHighlight>
             </View>
         )
