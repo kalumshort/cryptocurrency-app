@@ -1,4 +1,4 @@
-import httpClient from '../axios';
+import httpClient from '../apis/coin_paprika_api';
 import { fetchCoinsFinish } from './state';
 
 export function fetchCoins() {
@@ -11,3 +11,9 @@ export function fetchCoins() {
         });
     }
 }
+
+// export function fetchNews() {
+//     return function(dispatch) {
+//         const p =
+//     }
+// }
