@@ -34,7 +34,10 @@ class List extends Component {
             <View>
                 <TouchableHighlight
                  onPress={handlePress}>
-                    <Text>{item.CoinInfo.FullName}</Text>
+                    <>
+                        <Text>{item.CoinInfo.FullName}</Text>
+                        <Text>{item.DISPLAY.USD.PRICE}</Text>
+                    </>
                 </TouchableHighlight>
             </View>
         )
