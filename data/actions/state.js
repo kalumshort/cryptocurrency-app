@@ -4,3 +4,10 @@ export function fetchCoinsFinish(coinsData) {
         payload: coinsData
     };
 }
+
+export function fetchNewsFinish(newsData) {
+    return {
+        type: 'FETCH_NEWS_FINISH',
+        payload: newsData
+    };
+}

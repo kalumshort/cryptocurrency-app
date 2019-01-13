@@ -5,7 +5,14 @@ function reducer ( currentState, action) {
                 ...currentState,
                 coins: action.payload
             };
-        }default: {
+        }
+        case 'FETCH_NEWS_FINISH': {
+            return {
+                ...currentState,
+                newsArticles: action.payload
+            };
+        }
+        default: {
             return currentState;
         }
     }
