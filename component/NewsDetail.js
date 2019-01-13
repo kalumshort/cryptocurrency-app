@@ -15,15 +15,20 @@ const styles = StyleSheet.create({
         fontSize: 18,
         margin: 5,
     },
+    title: {
+        fontWeight: 'bold',
+    },
 });
 
 
 
 const NewsDetail = ({item}) => {
-    // const source = {uri: item.picture}
+    const source = {uri: item.imageurl}
     return (
     <View style={ styles.contactContainer}>
-        <Text>{item.title}</Text>
+        <Image source={source} style={styles.picture}/>
+        <Text style={styles.title}>{item.title}</Text>
+        <Text>{item.body}</Text>
     </View>
     );
 
