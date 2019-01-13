@@ -17,8 +17,8 @@ class List extends Component {
     }
 
 
-    keyExtractor(item) {
-        return item.id;  
+    keyExtractor(item, index) {
+        return `${index}`;
     }
 
     renderSeperator() {
@@ -34,7 +34,7 @@ class List extends Component {
             <View>
                 <TouchableHighlight
                  onPress={handlePress}>
-                    <Text>{item.name}</Text>
+                    <Text>{item}</Text>
                 </TouchableHighlight>
             </View>
         )

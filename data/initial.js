@@ -1,5 +1,5 @@
 const initialState = {
-    coins: []
+    coins: [],
 };
 
 export default initialState;
