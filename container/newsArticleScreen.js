@@ -6,6 +6,7 @@ import NewsArticles from '../component/NewsArticles';
 class NewsScreen extends Component {
     constructor(props){
         super(props);
+        this.handleItemPress = this.handleItemPress.bind(this);
 
     }
     static navigationOptions = {
@@ -19,10 +20,18 @@ class NewsScreen extends Component {
         this.props.getNews();
 
     }
+    handleItemPress(item) {
+        this.props.navigation.navigate('NewsDetail', {
+            item
+        });
+    }
     render() {
-        return(
-                <NewsArticles newsArticles={this.props.newsArticles}/>              
-            
+    return(
+        <NewsArticles
+            newsArticles={this.props.newsArticles}
+            onItemPress={this.handleItemPress}
+        />              
+
         )
     }
 }

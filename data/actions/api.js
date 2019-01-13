@@ -19,7 +19,6 @@ export function fetchNews() {
     return function(dispatch) {
         const p = httpClientCC.get('/data/v2/news/?lang=EN');
         p.then((response)=> {
-            console.log(response.data.Data.slice(0,4));
             const action = fetchNewsFinish(response.data.Data);
             dispatch(action);
         })

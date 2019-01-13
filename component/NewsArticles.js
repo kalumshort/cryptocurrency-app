@@ -27,13 +27,13 @@ class NewsArticles extends Component {
     }
 
     renderItem({item}) {
-        // const handlePress = () => {
-        //     this.props.onItemPress(item);
-        // }
+        const handlePress = () => {
+            this.props.onItemPress(item);
+        }
         return (
             <View>
                 <TouchableHighlight
-                //  onPress={handlePress}
+                 onPress={handlePress}
                  >
                     <>
                         <Text>{item.title}</Text>
