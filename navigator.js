@@ -4,9 +4,11 @@ import {
 } from 'react-navigation';
 
 import ListScreen from './container/listScreen.js';
+import NewsScreen from './container/newsArticleScreen';
 
 const RootNavigator = createStackNavigator({
-    Home: ListScreen,
+    Home: NewsScreen,
+    News: NewsScreen,
     
 }, {
     defaultNavigationOptions: {

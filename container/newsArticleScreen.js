@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchNews } from '../data/actions/api.js';
-import NewsArticles from './components/News.js';
+import NewsArticles from '../component/NewsArticles';
 
-class NewsArticles extends Component {
+class NewsScreen extends Component {
     constructor(props){
         super(props);
 
@@ -21,7 +21,7 @@ class NewsArticles extends Component {
     }
     render() {
         return(
-                <NewsArticles/>              
+                <NewsArticles newsArticles={this.props.newsArticles}/>              
             
         )
     }
@@ -44,6 +44,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const enhancer = connect(mapStateToProps, mapDispatchToProps);
-const NewsArticlesConnected = enhancer(NewsArticles);
+const NewsArticlesConnected = enhancer(NewsScreen);
 
 export default NewsArticlesConnected;
