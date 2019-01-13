@@ -35,7 +35,7 @@ class List extends Component {
                 <TouchableHighlight
                  onPress={handlePress}>
                     <>
-                        <Text>{item}</Text>
+                        <Text>{item.name}</Text>
                         <Text></Text>
                         <Text></Text>
                     </>
@@ -47,7 +47,7 @@ class List extends Component {
     render() {
         return (
             <FlatList
-                // data={this.props.coins}
+                data={this.props.coins}
                 keyExtractor={this.keyExtractor}
                 ItemSeparatorComponent={this.renderSeperator}
                 renderItem={this.renderItem}
