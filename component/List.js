@@ -36,7 +36,7 @@ class List extends Component {
                  onPress={handlePress}>
                     <>
                         <Text>{item.name}</Text>
-                        <Text></Text>
+                        <Text>{item.quotes.USD.price}</Text>
                         <Text></Text>
                     </>
                 </TouchableHighlight>
