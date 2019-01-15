@@ -2,11 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCoins } from '../data/actions/api.js';
 import List from '../component/List';
+import {View, Text, TouchableHighlight, FlatList, StyleSheet } from 'react-native';
+
+
 
 class ListScreen extends Component {
     constructor(props){
         super(props);
         this.handleItemPress = this.handleItemPress.bind(this);
+        this.handleNewsPress = this.handleNewsPress.bind(this);
 
     }
     static navigationOptions = {
@@ -27,12 +31,24 @@ class ListScreen extends Component {
         });
     }
 
+    handleNewsPress() {
+        this.props.navigation.navigate('News');
+    }
+
     render() {
         return(
-            <List 
-            coins={this.props.coins}
-            onItemPress={this.handleItemPress}
-            />
+            <>
+                <TouchableHighlight 
+                onPress={this.handleNewsPress}
+                style={styles.news}
+                >
+                    <Text>News</Text>
+                </TouchableHighlight>
+                <List 
+                coins={this.props.coins}
+                onItemPress={this.handleItemPress}
+                />
+                </>
         )
     }
 }
@@ -57,3 +73,9 @@ const enhancer = connect(mapStateToProps, mapDispatchToProps);
 const ListScreenConnected = enhancer(ListScreen);
 
 export default ListScreenConnected;
+
+const styles = StyleSheet.create({
+  news: {
+      margin: 21,
+  }
+});

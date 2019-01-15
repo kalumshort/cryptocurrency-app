@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {View, Text, TouchableHighlight, FlatList } from 'react-native';
+import {View, Text, TouchableHighlight, FlatList, StyleSheet } from 'react-native';
 
 class List extends Component {
     constructor(props){
@@ -26,6 +26,8 @@ class List extends Component {
         return <View style={style} />
     }
 
+   
+
     renderItem({item}) {
         const handlePress = () => {
             this.props.onItemPress(item);
@@ -47,14 +49,19 @@ class List extends Component {
 
     render() {
         return (
+            
+        
             <FlatList
                 data={this.props.coins}
                 keyExtractor={this.keyExtractor}
                 ItemSeparatorComponent={this.renderSeperator}
                 renderItem={this.renderItem}
             />
+            
         );
     }
 }
 
 export default List;
+
+
