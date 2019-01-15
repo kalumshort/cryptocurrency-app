@@ -6,7 +6,7 @@ import List from '../component/List';
 class ListScreen extends Component {
     constructor(props){
         super(props);
-        console.log(this.props.coins)
+        this.handleItemPress = this.handleItemPress.bind(this);
 
     }
     static navigationOptions = {
@@ -20,10 +20,18 @@ class ListScreen extends Component {
         this.props.getCoins();
 
     }
+
+    handleItemPress(item) {
+        this.props.navigation.navigate('CoinDetail', {
+            item
+        });
+    }
+
     render() {
         return(
-            <List coins={this.props.coins}
-                
+            <List 
+            coins={this.props.coins}
+            onItemPress={this.handleItemPress}
             />
         )
     }

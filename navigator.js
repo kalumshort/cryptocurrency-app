@@ -6,11 +6,14 @@ import {
 import ListScreen from './container/listScreen.js';
 import NewsScreen from './container/newsArticleScreen';
 import NewsDetailScreen from './container/newsDetailScreen';
+import CoinDetailScreen from './container/coinDetailScreen';
 
 const RootNavigator = createStackNavigator({
-    Home: NewsScreen,
+    Home: ListScreen,
     News: NewsScreen,
-    NewsDetail: NewsDetailScreen
+    NewsDetail: NewsDetailScreen,
+    CoinDetail: CoinDetailScreen,
+
     
 }, {
     defaultNavigationOptions: {

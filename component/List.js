@@ -27,13 +27,13 @@ class List extends Component {
     }
 
     renderItem({item}) {
-        // const handlePress = () => {
-        //     this.props.onItemPress(item);
-        // }
+        const handlePress = () => {
+            this.props.onItemPress(item);
+        }
         return (
             <View>
-                <TouchableHighlight
-                //  onPress={handlePress}
+                 <TouchableHighlight
+                 onPress={handlePress}
                  >
                     <>
                         <Text>{item.name}</Text>
