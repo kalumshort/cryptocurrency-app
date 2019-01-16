@@ -38,12 +38,12 @@ class ListScreen extends Component {
     render() {
         return(
             <>
-                <TouchableHighlight 
+                {/* <TouchableHighlight 
                 onPress={this.handleNewsPress}
                 style={styles.news}
                 >
                     <Text>News</Text>
-                </TouchableHighlight>
+                </TouchableHighlight> */}
                 <List 
                 coins={this.props.coins}
                 onItemPress={this.handleItemPress}

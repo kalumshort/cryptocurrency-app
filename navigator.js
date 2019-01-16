@@ -10,7 +10,7 @@ import CoinDetailScreen from './container/coinDetailScreen';
 import ExchangeListScreen from './container/exchangeListScreen';
 
 const RootNavigator = createStackNavigator({
-    Home: ExchangeListScreen,
+    Home: ListScreen,
     News: NewsScreen,
     NewsDetail: NewsDetailScreen,
     CoinDetail: CoinDetailScreen,

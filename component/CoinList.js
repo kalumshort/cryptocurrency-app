@@ -36,12 +36,13 @@ class List extends Component {
             <View>
                  <TouchableHighlight
                  onPress={handlePress}
+                 style={styles.listItem}
                  >
-                    <>
+                        <Text style={styles.itemSymbol}>{item.symbol}</Text>
                         <Text>{item.name}</Text>
-                        <Text>{item.quotes.USD.price}</Text>
-                        <Text>{item.quotes.USD.market_cap}</Text>
-                    </>
+                        <Text>${item.quotes.USD.price}</Text>
+                        {/* <Text>{item.quotes.USD.market_cap}</Text> */}
+                    
                 </TouchableHighlight>
             </View>
         )
@@ -64,4 +65,17 @@ class List extends Component {
 
 export default List;
 
+const styles = StyleSheet.create({
+    listItem: {
+        backgroundColor: 'lightblue',
+        alignItems: 'center',
+        flexDirection: 'row',
+        margin: 4,
+        padding: 15,
+    },
+    itemSymbol: {
+        fontWeight: 'bold',
+    }
+
+});
 
