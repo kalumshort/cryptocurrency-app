@@ -11,3 +11,10 @@ export function fetchNewsFinish(newsData) {
         payload: newsData
     };
 }
+
+export function fetchExchangesFinish(exchangesData) {
+    return {
+        type: 'FETCH_EXCHANGES_FINISH',
+        payload: exchangesData
+    }
+}

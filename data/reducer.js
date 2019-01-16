@@ -12,6 +12,12 @@ function reducer ( currentState, action) {
                 newsArticles: action.payload
             };
         }
+        case 'FETCH_EXCHANGES_FINISH' : {
+            return {
+                ...currentState,
+                exchanges: action.payload
+            };
+        }
         default: {
             return currentState;
         }

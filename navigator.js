@@ -3,16 +3,18 @@ import {
     createAppContainer
 } from 'react-navigation';
 
-import ListScreen from './container/listScreen.js';
+import ListScreen from './container/coinListScreen.js';
 import NewsScreen from './container/newsArticleScreen';
 import NewsDetailScreen from './container/newsDetailScreen';
 import CoinDetailScreen from './container/coinDetailScreen';
+import ExchangeListScreen from './container/exchangeListScreen';
 
 const RootNavigator = createStackNavigator({
-    Home: ListScreen,
+    Home: ExchangeListScreen,
     News: NewsScreen,
     NewsDetail: NewsDetailScreen,
     CoinDetail: CoinDetailScreen,
+    ExchangeList: ExchangeListScreen,
 
     
 }, {

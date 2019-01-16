@@ -40,7 +40,7 @@ class List extends Component {
                     <>
                         <Text>{item.name}</Text>
                         <Text>{item.quotes.USD.price}</Text>
-                        <Text></Text>
+                        <Text>{item.quotes.USD.market_cap}</Text>
                     </>
                 </TouchableHighlight>
             </View>
