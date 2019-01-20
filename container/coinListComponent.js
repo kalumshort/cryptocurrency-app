@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {View, Text, TouchableHighlight, FlatList, StyleSheet } from 'react-native';
-import Header from './CoinListPriceChange';
 
 class List extends Component {
     constructor(props){
