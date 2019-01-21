@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {View, Text, TouchableHighlight, FlatList, StyleSheet } from 'react-native';
-import Header from './CoinListPriceChange';
 
 class List extends Component {
     constructor(props){
@@ -24,22 +23,44 @@ class List extends Component {
         }
         return (
             <View style={styles.container}>
-                 <TouchableHighlight
-                 onPress={handlePress}
-                 style={styles.listItem}
-                 >
-                    <React.Fragment>
-                        <Text style={styles.itemSymbol}>{item.symbol}</Text>
-                        <Text style={styles.itemText}>{item.name}</Text>
-                        <Text style={styles.itemText}>${item.quotes.USD.price.toFixed(3)}</Text>
-                    </React.Fragment>
-                    
+                <TouchableHighlight
+                onPress={handlePress}
+                style={styles.listItem}
+                >
+                    <>
+                        <View style={styles.itemName}>
+                            <Text style={styles.itemSymbol}>{item.symbol}</Text>
+                            <Text style={styles.itemText}>{item.name}</Text>
+                        </View>
+                        <View style={styles.itemPrice}>
+                            <Text style={styles.itemText}>${item.quotes.USD.price.toFixed(3)}</Text>
+                        </View>
+
+                        {/* The different price changes for the different time periods */}
+                        <View style={styles.itemPriceChange}>
+
+                            {/* The change in price for the last hour */}
+                            {item.quotes.USD.percent_change_1h >= 0 ? 
+                            <Text style={styles.positive}>{item.quotes.USD.percent_change_1h}</Text>
+                            : <Text style={styles.nagative}>{item.quotes.USD.percent_change_1h}</Text>}
+
+                            {/* The change in price for the last 24 hours */}
+                            {item.quotes.USD.percent_change_24h >= 0 ?
+                            <Text style={styles.positive}>{item.quotes.USD.percent_change_24h}</Text>
+                            :<Text style={styles.nagative}>{item.quotes.USD.percent_change_24h}</Text> }
+
+                            {/* The change in price for the last 30 days  */}
+                            {item.quotes.USD.percent_change_30d >= 0 ? 
+                            <Text style={styles.positive}>{item.quotes.USD.percent_change_30d}</Text>
+                            : <Text style={styles.nagative}>{item.quotes.USD.percent_change_30d}</Text>}
+
+                        </View>
+                    </>
                 </TouchableHighlight>
             </View>
             
         )
     }
-
     render() {
         return (
             
@@ -59,25 +80,42 @@ export default List;
 
 const styles = StyleSheet.create({
     container: {
-        // backgroundColor: 'black',
+        backgroundColor: 'lime',
         flex: 1,
     },
     listItem: {
-        // backgroundColor: 'black',
-        // alignItems: 'center',
-        // flexDirection: 'row',
+        backgroundColor: '#303030',
+        alignItems: 'center',
+        flexDirection: 'row',
+        justifyContent:'space-between',
         margin: 4,
         padding: 15,
     },
     itemSymbol: {
         fontWeight: 'bold',
-        // color: 'white',
-        // alignSelf: 'center',
+        color: '#f2f2f2',
+        
         
     },
     itemText : {
-        // color: 'white',
-    }
+        color: '#f2f2f2',
+    },
+    itemName: {
+        
+
+    },
+    itemPrice: {
+        alignItems: 'center',
+    },
+    itemPriceChange: {
+        alignItems: 'center',
+    },
+    positive: {
+        color: '#00e81e'
+    },
+    nagative: {
+        color: '#e80000'
+    },
   
 
 });

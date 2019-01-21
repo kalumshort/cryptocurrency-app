@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCoins } from '../data/actions/api.js';
-// import List from '../component/CoinList';
-import List from './coinListComponent';
-import {View, Text, TouchableHighlight, FlatList, StyleSheet } from 'react-native';
+import List from '../component/CoinList';
+// import List from './coinListContainer';
+
+
 
 
 
@@ -17,7 +18,7 @@ class ListScreen extends Component {
     static navigationOptions = {
         title: 'Coins',
         headerStyle:{
-            backgroundColor: 'lightblue'
+            backgroundColor: '#303030',
         }
     }
 
@@ -39,17 +40,12 @@ class ListScreen extends Component {
     render() {
         return(
             <>
-                {/* <TouchableHighlight 
-                onPress={this.handleNewsPress}
-                style={styles.news}
-                >
-                    <Text>News</Text>
-                </TouchableHighlight> */}
                 <List 
                 coins={this.props.coins}
                 onItemPress={this.handleItemPress}
                 />
-                </>
+                
+            </>
         )
     }
 }
@@ -75,8 +71,3 @@ const ListScreenConnected = enhancer(ListScreen);
 
 export default ListScreenConnected;
 
-const styles = StyleSheet.create({
-  news: {
-      margin: 21,
-  }
-});

@@ -31,6 +31,11 @@ class List extends Component {
                         <Text style={styles.itemSymbol}>{item.symbol}</Text>
                         <Text style={styles.itemText}>{item.name}</Text>
                         <Text style={styles.itemText}>${item.quotes.USD.price.toFixed(3)}</Text>
+                        <View style={styles.itemPriceChange}>
+                        <Text style={styles.itemText}>{item.quotes.USD.percent_change_1h}</Text>
+                        <Text style={styles.itemText}>{item.quotes.USD.percent_change_24h}</Text>
+                        <Text style={styles.itemText}>{item.quotes.USD.percent_change_30d}</Text>
+                        </View>
                     </React.Fragment>
                     
                 </TouchableHighlight>
@@ -64,7 +69,7 @@ const styles = StyleSheet.create({
     listItem: {
         // backgroundColor: 'black',
         // alignItems: 'center',
-        // flexDirection: 'row',
+        flexDirection: 'row',
         margin: 4,
         padding: 15,
     },
@@ -76,6 +81,9 @@ const styles = StyleSheet.create({
     },
     itemText : {
         // color: 'white',
+    },
+    itemPriceChange: {
+        flexDirection: 'column',
     }
   
 
