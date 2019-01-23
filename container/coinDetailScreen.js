@@ -7,6 +7,12 @@ import CoinDetail from '../component/CoinDetail';
 
     static navigationOptions = ({navigation}) => ({
         title: navigation.getParam('item').name,
+        headerStyle:{
+          backgroundColor: '#303030',
+      },
+      headerTitleStyle:{ 
+          color: '#f2f2f2'
+      },
       });
 
     render() {

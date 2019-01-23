@@ -19,7 +19,10 @@ class ListScreen extends Component {
         title: 'Coins',
         headerStyle:{
             backgroundColor: '#303030',
-        }
+        },
+        headerTitleStyle:{ 
+            color: '#f2f2f2'
+        },
     }
 
     componentDidMount() {

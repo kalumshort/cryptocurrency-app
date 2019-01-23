@@ -22,16 +22,22 @@ class List extends Component {
             this.props.onItemPress(item);
         }
         return (
+            // Container that holds the button 
             <View style={styles.container}>
+
+                {/* Button that holds all the coin info   */}
                 <TouchableHighlight
                 onPress={handlePress}
                 style={styles.listItem}
                 >
                     <>
+                        {/* Items name and the symbol for the coin */}
                         <View style={styles.itemName}>
                             <Text style={styles.itemSymbol}>{item.symbol}</Text>
                             <Text style={styles.itemText}>{item.name}</Text>
                         </View>
+
+                        {/* The price per 1 of the coins */}
                         <View style={styles.itemPrice}>
                             <Text style={styles.itemText}>${item.quotes.USD.price.toFixed(3)}</Text>
                         </View>
@@ -80,7 +86,7 @@ export default List;
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'lime',
+        backgroundColor: '#303030',
         flex: 1,
     },
     listItem: {

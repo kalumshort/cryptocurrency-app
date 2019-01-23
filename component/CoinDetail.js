@@ -26,8 +26,13 @@ const CoinDetail = ({ item }) => {
     // const source = {uri: item.imageurl}
     return (
     <View style={ styles.contactContainer}>
-        <Text>{item.name}</Text>
-        <Text>{item.rank}</Text>
+        <View>
+            <Text>{item.symbol}</Text>
+            <Text>{item.name}</Text>
+        </View>
+        <View>
+            
+        </View>
     </View>
     );
 
