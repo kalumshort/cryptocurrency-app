@@ -1,7 +1,8 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import AppNavigator from './navigator';
+import AppNavigator from './navigator.js';
 import store from './data/store';
+
 
 const App = () => (
 	<Provider store={store}>

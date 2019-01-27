@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {View, Text, TouchableHighlight, FlatList, StyleSheet } from 'react-native';
 
+
 class List extends Component {
     constructor(props){
         super(props);
@@ -17,11 +18,12 @@ class List extends Component {
         return <View style={style} />
     }
 
-    renderItem({item}) {
+    renderItem({ item }) {
         const handlePress = () => {
             this.props.onItemPress(item);
         }
         return (
+
             // Container that holds the button 
             <View style={styles.container}>
 
@@ -63,20 +65,21 @@ class List extends Component {
                         </View>
                     </>
                 </TouchableHighlight>
+                
             </View>
             
         )
     }
     render() {
         return (
-            
-        
-            <FlatList
-                data={this.props.coins}
-                keyExtractor={this.keyExtractor}
-                ItemSeparatorComponent={this.renderSeperator}
-                renderItem={this.renderItem}
-            />
+            <>
+                <FlatList
+                    data={this.props.coins}
+                    keyExtractor={this.keyExtractor}
+                    ItemSeparatorComponent={this.renderSeperator}
+                    renderItem={this.renderItem}
+                />
+            </>
             
         );
     }

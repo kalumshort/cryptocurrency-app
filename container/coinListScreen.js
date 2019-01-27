@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCoins } from '../data/actions/api.js';
 import List from '../component/CoinList';
-// import List from './coinListContainer';
+import {Text, TouchableHighlight} from 'react-native';
+
 
 
 
@@ -16,6 +17,9 @@ class ListScreen extends Component {
 
     }
     static navigationOptions = {
+        drawerLabel: 'Coins',
+        drawerIcon: 'coins',
+
         title: 'Coins',
         headerStyle:{
             backgroundColor: '#303030',
@@ -37,12 +41,15 @@ class ListScreen extends Component {
     }
 
     handleNewsPress() {
-        this.props.navigation.navigate('News');
+        this.props.navigation.navigate('Drawer');
     }
 
     render() {
         return(
             <>
+                {/* <TouchableHighlight>
+                    <Text onPress={this.handleNewsPress}>drawer</Text>
+                </TouchableHighlight> */}
                 <List 
                 coins={this.props.coins}
                 onItemPress={this.handleItemPress}
