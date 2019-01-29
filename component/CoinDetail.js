@@ -7,11 +7,17 @@ const CoinDetail = ({ item }) => {
     // const source = {uri: item.imageurl}
     return (
     <View style={ styles.coinDetailContainer}>
-        <View style={styles.coinNames}>
-            <Text style={[styles.Text, styles.coinName]}>{item.name}</Text>
-            <Text style={[styles.Text, styles.coinSymbol]}>{item.symbol}</Text>
-            <Text style={[styles.Text, styles.coinRank]}>{item.rank}</Text>
+
+        <View style={styles.coinTop}>
+            <View style={styles.Rank}>
+                <Text style={[styles.Text, styles.coinRank]}>{item.rank}</Text>
+            </View>
+            <View  style={styles.coinNames}>
+                <Text style={[styles.Text, styles.coinName]}>{item.name}</Text>
+                <Text style={[styles.Text, styles.coinSymbol]}>{item.symbol}</Text>
+            </View>
         </View>
+
         <View style={styles.TotalMarket}>
             <Text>{item.circulating_supply}</Text>
             <Text>{item.max_supply}</Text>
@@ -74,11 +80,27 @@ const CoinDetail = ({ item }) => {
         padding: 20,
         backgroundColor: '#303030',
     },
-    picture: {
-        height: 200, 
-        width: 200,
-        marginBottom: 10,
-        alignSelf: 'center',
+    coinTop: {
+        flexDirection: 'row',
+        marginBottom: 30,
+    },
+    Rank: {
+        marginRight: 100,
+        justifyContent: 'center',
+    },
+    coinRank: {
+        fontSize: 50,
+        fontWeight: 'normal',
+    },
+    coinNames: {
+        alignItems: 'center',
+    },
+    coinName: {
+        fontSize: 25,
+        fontWeight: 'bold',
+    },
+    coinSymbol: {
+        fontWeight: '100',
     },
     Text: {
         color: '#f2f2f2',
