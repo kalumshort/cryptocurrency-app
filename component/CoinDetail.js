@@ -15,14 +15,20 @@ const CoinDetail = ({ item }) => {
             <View  style={styles.coinNames}>
                 <Text style={[styles.Text, styles.coinName]}>{item.name}</Text>
                 <Text style={[styles.Text, styles.coinSymbol]}>{item.symbol}</Text>
+                <Text style={styles.itemPrice}>${item.quotes.USD.price.toFixed(3)}</Text>
+
             </View>
         </View>
 
+        {/* <View style={styles.Price}>
+            <Text style={styles.itemPrice}>${item.quotes.USD.price.toFixed(3)}</Text>
+        </View> */}
+
         <View style={styles.TotalMarket}>
-            <Text>{item.circulating_supply}</Text>
-            <Text>{item.max_supply}</Text>
-            <Text>{item.total_supply}</Text>
-            <Text>{item.quotes.USD.market_cap}</Text>
+            <Text>Circulating Supply:  {item.circulating_supply}</Text>
+            <Text>Max Supply:  {item.max_supply}</Text>
+            <Text>Total Supply:  {item.total_supply}</Text>
+            <Text>Total Market Cap:  {item.quotes.USD.market_cap}</Text>
         </View>
 
         {/* different price changes  */}
@@ -82,10 +88,11 @@ const CoinDetail = ({ item }) => {
     },
     coinTop: {
         flexDirection: 'row',
-        marginBottom: 30,
+        marginBottom: 10,
+        justifyContent: 'space-between',
     },
     Rank: {
-        marginRight: 100,
+        // marginRight: 10,
         justifyContent: 'center',
     },
     coinRank: {
@@ -100,6 +107,15 @@ const CoinDetail = ({ item }) => {
         fontWeight: 'bold',
     },
     coinSymbol: {
+        fontWeight: '100',
+    },
+    Price:{
+        justifyContent:'center',
+        alignItems: 'center',
+    },
+    itemPrice: {
+        color: '#f2f2f2',
+        fontSize: 30,
         fontWeight: '100',
     },
     Text: {
