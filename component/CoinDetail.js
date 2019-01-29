@@ -18,13 +18,38 @@ const CoinDetail = ({ item }) => {
             <Text>{item.total_supply}</Text>
             <Text>{item.quotes.USD.market_cap}</Text>
         </View>
+
+        {/* different price changes  */}
         <View style={styles.PriceChange}>
-            <Text>{item.quotes.USD.percent_change_1h}</Text>
-            <Text>{item.quotes.USD.percent_change_24h}</Text>
-            <Text>{item.quotes.USD.percent_change_7d}</Text>
-            <Text>{item.quotes.USD.percent_change_30d}</Text>
-            <Text>{item.quotes.USD.percent_change_1y}</Text>
+
+             {/* The change in price for the last hour */}
+             {item.quotes.USD.percent_change_1h >= 0 ? 
+            <Text style={styles.positive}>{item.quotes.USD.percent_change_1h}</Text>
+            : <Text style={styles.nagative}>{item.quotes.USD.percent_change_1h}</Text>}
+
+            {/* The change in price for the last 24 hours */}
+            {item.quotes.USD.percent_change_24h >= 0 ?
+            <Text style={styles.positive}>{item.quotes.USD.percent_change_24h}</Text>
+            :<Text style={styles.nagative}>{item.quotes.USD.percent_change_24h}</Text> }
+            
+             {/* The change in price for the last 7 days  */}
+             {item.quotes.USD.percent_change_7d >= 0 ? 
+            <Text style={styles.positive}>{item.quotes.USD.percent_change_7d}</Text>
+            : <Text style={styles.nagative}>{item.quotes.USD.percent_change_7d}</Text>}
+
+            {/* The change in price for the last 30 days  */}
+            {item.quotes.USD.percent_change_30d >= 0 ? 
+            <Text style={styles.positive}>{item.quotes.USD.percent_change_30d}</Text>
+            : <Text style={styles.nagative}>{item.quotes.USD.percent_change_30d}</Text>}
+            
+            {/* The change in price for the last year */}
+            {item.quotes.USD.percent_change_1y >= 0 ? 
+            <Text style={styles.positive}>{item.quotes.USD.percent_change_1y}</Text>
+            : <Text style={styles.nagative}>{item.quotes.USD.percent_change_1y}</Text>}
+
         </View>
+        
+        {/* Price surrounding the ATH */}
         <View style={styles.ATHPrice}>
             <Text>{item.quotes.USD.ath_price}</Text>
             <Text>{item.quotes.USD.percent_from_price_ath}</Text>
@@ -58,5 +83,11 @@ const CoinDetail = ({ item }) => {
     },
     title: {
         fontWeight: 'bold',
+    },
+    positive: {
+        color: '#00e81e'
+    },
+    nagative: {
+        color: '#e80000'
     },
 });
