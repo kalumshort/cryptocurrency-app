@@ -48,11 +48,15 @@ const CoinDetail = ({ item }) => {
             : <Text style={styles.nagative}>{item.quotes.USD.percent_change_1y}</Text>}
 
         </View>
-        
+
         {/* Price surrounding the ATH */}
         <View style={styles.ATHPrice}>
             <Text>{item.quotes.USD.ath_price}</Text>
-            <Text>{item.quotes.USD.percent_from_price_ath}</Text>
+             {/* The change in price for the last year */}
+             {item.quotes.USD.percent_from_price_ath >= 0 ? 
+            <Text style={styles.positive}>{item.quotes.USD.percent_from_price_ath}</Text>
+            : <Text style={styles.nagative}>{item.quotes.USD.percent_from_price_ath}</Text>}
+
             <Text>{item.quotes.USD.ath_date}</Text>
             {/* <Text>{item.}</Text> */}
         </View>
