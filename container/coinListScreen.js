@@ -17,9 +17,6 @@ class ListScreen extends Component {
 
     }
     static navigationOptions = {
-        drawerLabel: 'Coins',
-        drawerIcon: 'coins',
-
         title: 'Coins',
         headerStyle:{
             backgroundColor: '#303030',
@@ -41,7 +38,7 @@ class ListScreen extends Component {
     }
 
     handleNewsPress() {
-        this.props.navigation.navigate('Drawer');
+        this.props.navigation.toggleDrawer();
     }
 
     render() {
