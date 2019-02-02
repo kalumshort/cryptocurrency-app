@@ -9,7 +9,7 @@ export function fetchCoins() {
         const p = httpClient.get('tickers');
         p.then((response)=> {
             console.log(response.data.slice(0,2))
-            const action = fetchCoinsFinish(response.data.slice(0,50).sort(function(a,b){
+            const action = fetchCoinsFinish(response.data.sort(function(a,b){
                 return a.rank - b.rank;
             }));
             dispatch(action);
