@@ -12,7 +12,7 @@ class NewsScreen extends Component {
     static navigationOptions = {
         title: 'News',
         headerStyle:{
-            backgroundColor: 'lime'
+            backgroundColor: '#303030'
         }
     }
 

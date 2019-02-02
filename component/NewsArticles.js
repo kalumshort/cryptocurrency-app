@@ -1,5 +1,14 @@
 import React, { Component } from 'react';
-import {View, Text, TouchableHighlight, FlatList } from 'react-native';
+import { 
+         View,
+         Text, 
+         TouchableHighlight, 
+         StyleSheet, 
+         FlatList, 
+         ImageBackground, 
+         Dimensions, 
+        } 
+         from 'react-native';
 
 class NewsArticles extends Component {
     constructor(props){
@@ -7,15 +16,6 @@ class NewsArticles extends Component {
         this.renderItem = this.renderItem.bind(this);
 
     }
-
-    static navigationOptions = {
-        title: 'News',
-        headerStyle: {
-            backgroundColour: 'black'
-        },
-
-    }
-
 
     keyExtractor(item, index) {
         return `${index}`;
@@ -30,15 +30,21 @@ class NewsArticles extends Component {
         const handlePress = () => {
             this.props.onItemPress(item);
         }
+        const source = {uri: item.imageurl}
         return (
             <View>
                 <TouchableHighlight
-                 onPress={handlePress}
+                 onPress={ handlePress }
                  >
                     <>
-                        <Text>{item.title}</Text>
-                        <Text></Text>
-                        <Text></Text>
+                        <View style={ styles.newsBox }>
+                            <ImageBackground source={ source } style={ styles.picture }>
+                                <View style={styles.imageOverlay}>
+                                    <Text style={ styles.newsTitle }>{ item.title }</Text>
+                                    <Text style={ styles.newsSource }>{ item.source }</Text>
+                                </View>
+                            </ImageBackground>
+                        </View>
                     </>
                 </TouchableHighlight>
             </View>
@@ -50,7 +56,7 @@ class NewsArticles extends Component {
             <FlatList
                 data={this.props.newsArticles}
                 keyExtractor={this.keyExtractor}
-                ItemSeparatorComponent={this.renderSeperator}
+                // ItemSeparatorComponent={this.renderSeperator}
                 renderItem={this.renderItem}
             />
         );
@@ -58,3 +64,50 @@ class NewsArticles extends Component {
 }
 
 export default NewsArticles;
+
+const WIDTH = Dimensions.get('window').width;
+
+const styles = StyleSheet.create({
+    contactContainer: {
+        padding: 0,
+        margin: 0,
+    },
+    picture: {
+        height: 200, 
+        width: WIDTH*1,
+        marginBottom: 10,
+        alignSelf: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
+
+    },
+    newsBox: {
+        backgroundColor: '#303030',
+    },
+    imageOverlay: {
+        flex: 1,
+        backgroundColor:'rgba(0,0,0,.6)',
+        paddingLeft: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    newsTitle: {
+        fontSize: 22,
+        color: 'white',
+        // fontStyle: 'italic',
+        fontWeight: '300',
+    },
+    newsSource: {
+        fontSize:15,
+        color:'white',
+        fontStyle: 'italic',
+        fontWeight: '100',
+    },
+    Text: {
+        fontSize: 18,
+        margin: 5,
+    },
+    title: {
+        fontWeight: 'bold',
+    },
+});

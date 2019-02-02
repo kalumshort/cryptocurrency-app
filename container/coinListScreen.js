@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCoins } from '../data/actions/api.js';
 import List from '../component/CoinList';
-import {Text, TouchableHighlight} from 'react-native';
 
 
 

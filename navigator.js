@@ -1,5 +1,3 @@
-import React , { Component } from 'react';
-
 import {
     createStackNavigator,
     createAppContainer,
@@ -16,7 +14,6 @@ import NewsScreen from './container/newsArticleScreen';
 import NewsDetailScreen from './container/newsDetailScreen';
 import CoinDetailScreen from './container/coinDetailScreen';
 import ExchangeListScreen from './container/exchangeListScreen';
-import Test from './screens/Test';
 
 import MenuButton from './component/MenuButton';
 
@@ -72,8 +69,9 @@ const NewsListStack = createStackNavigator({
 // The drawer that holds the stacks and other screens for the app
 const DrawerNavigator = createDrawerNavigator(
     {
-    Coins: CoinListStack,
     News: NewsListStack,
+    Coins: CoinListStack,
+
     },
     DrawerConfig
 );
