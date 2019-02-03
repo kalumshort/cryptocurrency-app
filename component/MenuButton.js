@@ -11,7 +11,7 @@ import { StyleSheet } from 'react-native';
                 <>
                     <Ionicons
                     name="md-menu"
-                    color='lime'
+                    color='#f2f2f2'
                     size={32}
                     onPress={ this.props.onPress }
                     />

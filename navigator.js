@@ -44,6 +44,12 @@ const navigationOptionsNews = ({ navigation }) => {
         headerStyle:{
             backgroundColor: '#303030',
         },
+        headerTitleStyle:{ 
+            color: '#f2f2f2'
+        },
+        headerRightContainerStyle: {
+            paddingRight: 20,
+        },
     }
 }
 
@@ -57,6 +63,12 @@ const navigationOptionsCoins = ({ navigation }) => {
         title: 'Coins',
         headerStyle: {
             backgroundColor: '#303030',
+        },
+        headerTitleStyle:{ 
+            color: '#f2f2f2'
+        },
+        headerRightContainerStyle: {
+            paddingRight: 20,
         },
     }
 }
