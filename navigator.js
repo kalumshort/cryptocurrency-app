@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {
     createStackNavigator,
     createAppContainer,
@@ -17,44 +19,25 @@ import ExchangeListScreen from './container/exchangeListScreen';
 
 import MenuButton from './component/MenuButton';
 
+// finding the dimensions of the screen and setting how much the drawer takes up
 const WIDTH = Dimensions.get('window').width;
-
-
 const DrawerConfig = {
     drawerWidth: WIDTH*0.75,
 }
-
-// const AppDrawerNavigator = createDrawerNavigator(
-//     {
-//     // Home: RootNavigator,
-//     List: ListScreen,
-//     News: NewsScreen,
-//     ExchangeList: ExchangeListScreen,
-//     },
-//     DrawerConfig
-// );
-
-// const RootNavigator = createStackNavigator({
-//     // Drawer: AppDrawerNavigator,
-
-//     Home: ListScreen,
-//     News: NewsScreen,
-//     NewsDetail: NewsDetailScreen,
-//     CoinDetail: CoinDetailScreen,
-//     ExchangeList: ExchangeListScreen,
-
-// },
-// {
-//     defaultNavigationOptions: {
-//         title: 'test',
-//         headerStyle: {
-//             backgroundColor: '#303030'
-//         },
-//         headerTintColor: 'white',
-//         // headerLeft: <MenuButton/>
-
-//     } 
-// });
+// setting the 
+const navigationOptionsNews = ({ navigation }) => {
+    return {
+        headerRight: (
+            <MenuButton
+                onPress={() => navigation.toggleDrawer()}
+            />
+        ),
+        title: 'News',
+        headerStyle:{
+            backgroundColor: '#303030',
+        },
+    }
+}
 
 // The stack that holds the list of the coins and the detail page for each coin
 const CoinListStack = createStackNavigator({
@@ -62,10 +45,20 @@ const CoinListStack = createStackNavigator({
     CoinDetail: CoinDetailScreen
 });
 // The stack that holds the news articles and the detail page for them
-const NewsListStack = createStackNavigator({
-    News: NewsScreen,
-    NewsDetail: NewsDetailScreen,
-});
+const NewsListStack = createStackNavigator(
+    {
+        News: {
+        screen: NewsScreen,
+        },
+        NewsDetail: {
+        screen: NewsDetailScreen,
+        },
+    },
+    {
+        defaultNavigationOptions: navigationOptionsNews,
+        initialRouteName: 'News',
+    },
+ );
 // The drawer that holds the stacks and other screens for the app
 const DrawerNavigator = createDrawerNavigator(
     {

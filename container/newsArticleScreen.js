@@ -7,19 +7,12 @@ class NewsScreen extends Component {
     constructor(props){
         super(props);
         this.handleItemPress = this.handleItemPress.bind(this);
-
     }
-    static navigationOptions = {
-        title: 'News',
-        headerStyle:{
-            backgroundColor: '#303030'
-        }
-    }
-
+    
     componentDidMount() {
         this.props.getNews();
-
     }
+   
     handleItemPress(item) {
         this.props.navigation.navigate('NewsDetail', {
             item
@@ -27,11 +20,12 @@ class NewsScreen extends Component {
     }
     render() {
     return(
-        <NewsArticles
-            newsArticles={this.props.newsArticles}
-            onItemPress={this.handleItemPress}
-        />              
-
+            <>
+                <NewsArticles
+                    newsArticles={this.props.newsArticles}
+                    onItemPress={this.handleItemPress}
+                />              
+            </>
         )
     }
 }
