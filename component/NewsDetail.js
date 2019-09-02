@@ -1,8 +1,17 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, Image, TouchableHighlight, ScrollView } from 'react-native';
+
+// importing react native components
+import {StyleSheet, 
+        Text, 
+        View, 
+        Image, 
+        TouchableHighlight, 
+        ScrollView 
+        } 
+        from 'react-native';
 
 const styles = StyleSheet.create({
-    contactContainer: {
+    newsDetailContainer: {
         padding: 20,
     },
     picture: {
@@ -23,13 +32,24 @@ const styles = StyleSheet.create({
 
 
 const NewsDetail = ({item}) => {
-    const source = {uri: item.imageurl}
+    const source = {uri: item.imageurl} 
     return (
-    <View style={ styles.contactContainer}>
-        <Image source={source} style={styles.picture}/>
-        <Text style={styles.title}>{item.title}</Text>
-        <Text>{item.body}</Text>
-    </View>
+        <View style={ styles.newsDetailContainer}>
+            <View style={styles.imageContiner}>
+                <Image source={source} style={styles.picture}/> 
+            </View>
+            <View style={styles.newsDetailTitle}>
+                <Text style={styles.title}>{item.title}</Text>
+            </View>
+            <View style={styles.newsDetailBody}>
+                <Text>{item.body}</Text>
+            </View>
+            <View>
+                <TouchableHighlight>
+                    <Text>Full Article</Text>
+                </TouchableHighlight>
+            </View>
+        </View>
     );
 
 

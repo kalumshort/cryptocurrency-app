@@ -1,4 +1,7 @@
+// importing react
 import React, { Component } from 'react';
+
+// importing react native packages
 import { 
          View,
          Text, 
@@ -79,7 +82,6 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         alignItems: 'center',
         justifyContent: 'center',
-
     },
     newsBox: {
         backgroundColor: '#303030',

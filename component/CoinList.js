@@ -49,18 +49,18 @@ class List extends Component {
 
                             {/* The change in price for the last hour */}
                             {item.quotes.USD.percent_change_1h >= 0 ? 
-                            <Text style={styles.positive}>{item.quotes.USD.percent_change_1h}</Text>
-                            : <Text style={styles.nagative}>{item.quotes.USD.percent_change_1h}</Text>}
+                            <Text style={styles.positive}>{item.quotes.USD.percent_change_1h} %</Text>
+                            : <Text style={styles.nagative}>{item.quotes.USD.percent_change_1h} %</Text>}
 
                             {/* The change in price for the last 24 hours */}
                             {item.quotes.USD.percent_change_24h >= 0 ?
-                            <Text style={styles.positive}>{item.quotes.USD.percent_change_24h}</Text>
-                            :<Text style={styles.nagative}>{item.quotes.USD.percent_change_24h}</Text> }
+                            <Text style={styles.positive}>{item.quotes.USD.percent_change_24h} %</Text>
+                            :<Text style={styles.nagative}>{item.quotes.USD.percent_change_24h} %</Text> }
 
                             {/* The change in price for the last 30 days  */}
                             {item.quotes.USD.percent_change_30d >= 0 ? 
-                            <Text style={styles.positive}>{item.quotes.USD.percent_change_30d}</Text>
-                            : <Text style={styles.nagative}>{item.quotes.USD.percent_change_30d}</Text>}
+                            <Text style={styles.positive}>{item.quotes.USD.percent_change_30d} %</Text>
+                            : <Text style={styles.nagative}>{item.quotes.USD.percent_change_30d} %</Text>}
 
                         </View>
                     </>
