@@ -13,7 +13,7 @@
     "d3-shape": "^1.2.2",
     "expo": "^34.0.3",
     "init": "^0.1.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "numeral": "^2.0.6",
     "react": "16.8.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
